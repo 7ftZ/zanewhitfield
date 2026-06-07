@@ -1,0 +1,73 @@
+{{#if isUsingMobile}}
+  <div class="flex py-12 duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 text-white">
+    <div class="flex flex-col w-mobileWidth">
+      <div class="flex justify-center justify-between pb-2 items-end">
+        <div class="{{if @iconNeedsOffset '-mb-3'}} -mb-1">
+          {{svg-jar @iconName class="w-12 h-12"}}
+        </div>
+        <div class="flex flex-col items-end">
+            <div class="-mb-1">{{@companyName}}</div>
+            <div class="-mb-1 text-xs">{{@date}}</div>
+        </div>
+      </div>
+      <hr class="border-white">
+      <div class="flex flex-col pt-3">
+          {{#if @needsVideo}}
+            <div>
+              <video class="border border-white rounded" width="400" controls>
+                <source src={{@videoURL}} type="video/mp4">
+              </video>
+            </div>
+            <div class="pt-3">
+              {{@achievementDescription}}
+            </div>
+          {{else}}
+            <div>
+              {{@achievementDescription}}
+            </div>
+          {{/if}}
+      </div>
+    </div>
+</div>
+{{else}}
+  <div class="flex {{if @leftAlignment '' 'justify-end'}} py-12 duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 border border-transparent">
+    {{#if @leftAlignment}}
+        <div class="pl-12 flex flex-col">
+            {{svg-jar @iconName class="w-40 h-40"}}
+            <span class="text-sm text-white text-center pt-1">{{@companyName}}</span>
+            <span class="text-sm text-white text-center pt-1">{{@date}}</span>
+        </div>
+        <div class="flex text-white items-center">
+            {{#if @needsVideo}}
+            <div class="pl-6 pr-4 -mt-12">
+                <video class="border border-white rounded" width="300" controls>
+                  <source src={{@videoURL}} type="video/mp4">
+                </video>
+            </div>
+            <div class="-mt-6 w-descriptionWidth -mt-4">{{@achievementDescription}}</div>
+            {{else}}
+            <div class="pl-6 w-descriptionWidth -mt-4">{{@achievementDescription}}</div>
+            {{/if}}
+        </div>
+    {{else}}
+       <div class="flex text-white items-center">
+        {{#if @needsVideo}}
+          <div class="-mt-6 w-descriptionWidth">{{@achievementDescription}}</div>
+          <div class="pr-6 pl-4">
+              <video class="border border-white rounded" width="300" controls>
+                <source src={{@videoURL}} type="video/mp4">
+              </video>
+          </div>
+         {{else}}
+           <div class="pr-6 w-descriptionWidth">{{@achievementDescription}}</div>
+         {{/if}}
+       </div>
+       <div class="pr-12 flex flex-col">
+          {{svg-jar @iconName class="w-40 h-40"}}
+          <span class="text-sm text-white text-center pt-1">{{@companyName}}</span>
+          <span class="text-sm text-white text-center pt-1">{{@date}}</span>
+       </div>
+    {{/if}}
+  </div>
+{{/if}}
+

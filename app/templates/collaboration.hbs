@@ -1,0 +1,67 @@
+{{page-title "Zane Whitfield | Collaborate"}}
+{{#if formHasBeenSubmitted}}
+  <div class="bg-appleBlack h-screen w-screen flex flex-col justify-center">
+    <div class="h-formSubmitHeight flex flex-col items-center">
+      <div class="text-white -mt-24">
+        <img src="https://res.cloudinary.com/dalzlxm5g/image/upload/v1593719539/zane_ku7oai.png" alt="picture of zane" width="300">
+      </div>
+      <div class="text-white text-center w-formWidth">
+        Thank you for reaching out! I'll be in touch soon!
+        Redirecting you to my homepage in <span class="text-yellow-300">{{remainingTime}}</span> second{{plural}}.
+      </div>
+    </div>
+  </div>
+{{else}}
+  <div class="bg-appleBlack h-screen w-screen pt-12">
+    <div class="flex justify-center">
+        <div class="flex flex-col items-center">
+          <div class="text-white text-6xl">Collaborate</div>
+          <div class="text-white text-2xl">Work with me.</div>
+
+          <div class="flex flex-wrap w-formWidth justify-center">
+            <div class="text-white pt-8 text-center">
+              <div>Want to collaborate on a dope project?</div>
+              <div>Hit me up!</div>
+            </div>
+          </div>
+          <div class="flex flex-col text-white w-formWidth">
+            {{#if isFormIncomplete}}
+              <div class="text-red-600 pt-2 text-center -mb-1">
+                {{errorReason}}
+              </div>
+            {{/if}}
+            <div class="block">
+                <div class="flex items-center">
+                  <div class="pr-6">
+                    <div class="{{if reasonIsFirstName 'px-1 py-1 border-2 border-red-700 rounded' ''}}">
+                      {{input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value=firstName id="firstName" type="text" placeholder="First Name"}}
+                    </div>
+                  </div>
+                  <div class="py-6">
+                    <div class="{{if reasonIsLastName 'px-1 py-1 border-2 border-red-700 rounded' ''}}">
+                      {{input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value=lastName id="lastName" type="text" placeholder="Last Name"}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pb-6">
+                  <div class="{{if reasonIsEmail 'px-1 py-1 border-2 border-red-700 rounded' ''}}">
+                    {{input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value=collaboratorEmail id="email" type="text" placeholder="email"}}
+                  </div>
+                </div>
+                <div class="pb-4">
+                  <div class="{{if reasonIsMessage 'px-1 py-1 border-2 border-red-700 rounded' ''}}">
+                    {{textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 -mb-1" value=collaboratorMessage id="collaboratorMessage" type="text" placeholder="Talk to me. What's up?"}}
+                  </div>
+                </div>
+                <div class="flex justify-center">
+                  <button onclick={{action "submissionSetup"}} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    Submit
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+{{/if}}

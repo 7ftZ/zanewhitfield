@@ -1,0 +1,76 @@
+{{page-title "Zane Whitfield | About Me"}}
+<div class="bg-appleBlack h-full w-screen pt-12">
+    <div class="flex justify-center">
+        <div class="flex flex-col items-center">
+          <div class="text-white sm:text-6xl xsm:text-zwHeading">Zane Whitfield</div>
+          <div class="pl-10">
+            <img src="https://res.cloudinary.com/dalzlxm5g/image/upload/v1598709296/Zane_PNG_v4_aqddhj.png" alt="picture of zane" width="325">
+          </div>
+          <div class="text-white text-2xl">Engineer. Creator. Visionary.</div>
+
+          <div class="flex flex-wrap sm:w-mainDescriptionWidth xsm:w-mobileWidth justify-center text-center">
+            <div class="text-white pt-8 italic text-sm">"Have fun and kick life's ass because you can only do it once!"</div>
+            <div class="text-white pt-8 text-sm text-left pl-3">
+                I am an extremely passionate entrepreneur that continually
+                strives to learn and innovate. My mentality is "If I don't know it today, I'll know it tomorrow." With that said,
+                I'm always down for a challenge or project! So if you want to collab, feel free to reach out!
+            </div>
+          </div>
+          <div class="flex pt-12 sm:w-iconBannerWidth justify-between xsm:w-mobileWidth">
+              <div class="duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="https://www.linkedin.com/in/enaz321/">
+                  {{svg-jar "linkedin" class="w-12 h-12"}}
+                </a>
+              </div>
+              <div class="px-4 duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="https://twitter.com/__enaZ">
+                  {{svg-jar "twitter" class="w-12 h-12"}}
+                </a>
+              </div>
+              <div class="duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="https://www.youtube.com/user/enaz4ever">
+                  {{svg-jar "youtube" class="w-12 h-12"}}
+                </a>
+              </div>
+              <div class="px-4 duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="https://www.instagram.com/trickywhit/">
+                  {{svg-jar "instagram" class="w-12 h-12"}}
+                </a>
+              </div>
+              <div class="duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="https://www.twitch.tv/sevenftz">
+                  {{svg-jar "twitch" class="w-12 h-12"}}
+                </a>
+              </div>
+          </div>
+          <div class="sm:w-timelineWidth {{if isUsingMobile 'xsm:w-mobileWidth' ''}}">
+            <div class="text-4xl text-gray-300 pt-16 text-center">Timeline</div>
+              <div class="flex items-center">
+                <Achievement
+                  @iconName="sfdc"
+                  @achievementDescription={{salesforceDescription}}
+                  @leftAlignment={{true}}
+                  @date="Jan 2019 - Present"
+                  @iconNeedsOffset={{true}}
+                  @companyName="Salesforce"
+                />
+                </div>
+                <Achievement
+                  @iconName="nbcu"
+                  @achievementDescription={{nbcUniversalDescription}}
+                  @date="Jun 2017 - Aug 2017"
+                  @companyName="NBCUniversal"
+                />
+                <Achievement
+                  @iconName="microsoft"
+                  @achievementDescription={{microsoftDescription}}
+                  @needsVideo={{true}}
+                  @leftAlignment={{true}}
+                  @date="Oct 2013 - Feb 2014"
+                  @videoURL="https://res.cloudinary.com/dalzlxm5g/video/upload/v1593412010/microsoft_tlecfv.mp4"
+                  @companyName="Microsoft"
+                />
+              </div>
+           </div>
+    </div>
+</div>

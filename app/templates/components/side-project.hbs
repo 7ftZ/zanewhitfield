@@ -1,0 +1,58 @@
+<div class="flex py-8 duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 text-white">
+    <div class="flex flex-col sm:w-iconBannerWidth xsm:w-mobileWidth">
+      <div class="flex justify-center justify-between pb-2">
+        <div>{{@projectName}}</div>
+        <div>{{@date}}</div>
+      </div>
+      <hr class="border-white">
+      <div class="flex pt-2">
+          {{#if @hasPicture}}
+            {{#if @isPngOrJpeg}}
+            <div class="flex flex-col items-center">
+                <div class="text-white pt-2">
+                    <img src={{@iconName}} alt="picture of temporary learner wireframe" width="w-mobileWidth">
+                </div>
+                <div class="text-white pt-2">
+                    {{@description}}
+                </div>
+              </div>
+            {{else}}
+              <div class="flex flex-col items-center">
+                <div class="text-white pt-2">
+                    {{svg-jar @iconName class="w-mobileWidth"}}
+                </div>
+                <div class="text-white pt-2">
+                    {{@description}}
+                </div>
+              </div>
+            {{/if}}
+          {{else if @hasVideo}}
+          <div>
+            <div class="text-white pt-2">
+              <video class="border border-white rounded" width="w-mobileWidth" controls>
+                <source src={{@videoURL}} type="video/mp4">
+              </video>
+            </div>
+            <div class="text-white pt-2">
+                {{@description}}
+            </div>
+          </div>
+          {{else if @hasAudio}}
+            <div>
+              <div class="flex text-white pt-2 justify-center">
+                <audio width="w-mobileWidth" controls>
+                  <source src={{@audioURL}} type="audio/mp3">
+                </audio>
+              </div>
+              <div class="text-white pt-2">
+                  {{@description}}
+              </div>
+           </div>
+          {{else}}
+            <div class="w-generalDescriptionWidth">
+                {{@description}}
+            </div>
+          {{/if}}
+      </div>
+    </div>
+</div>
