@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "EMBER_CLI_JOBS=0 ember build --environment=production",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider JOBS=1 ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
@@ -62,5 +62,8 @@
     "@glimmer/component": "^1.0.0",
     "@glimmer/tracking": "^1.0.0",
     "emailjs-com": "^2.6.3"
+  },
+  "overrides": {
+    "workerpool": "^6.5.1"
   }
 }
