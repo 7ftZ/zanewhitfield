@@ -55,7 +55,7 @@
     "tailwindcss": "^1.4.6"
   },
   "engines": {
-    "node": "18.x",
+    "node": "20.x",
     "yarn": "~1.22.4"
   },
   "dependencies": {
