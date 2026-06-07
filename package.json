@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "build": "EMBER_CLI_JOBS=0 ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
@@ -55,7 +55,7 @@
     "tailwindcss": "^1.4.6"
   },
   "engines": {
-    "node": "6.* || 8.* || >= 10.*",
+    "node": "18.x",
     "yarn": "~1.22.4"
   },
   "dependencies": {
